@@ -1,0 +1,51 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: monorepo_mongo
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: myapp
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - monorepo_net
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: monorepo_redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - monorepo_net
+
+  # Optional: Redis GUI
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: monorepo_redis_ui
+    restart: unless-stopped
+    environment:
+      REDIS_HOSTS: local:redis:6379
+    ports:
+      - '8081:8081'
+    depends_on:
+      - redis
+    networks:
+      - monorepo_net
+
+volumes:
+  mongo_data:
+  redis_data:
+
+networks:
+  monorepo_net:
+    driver: bridge

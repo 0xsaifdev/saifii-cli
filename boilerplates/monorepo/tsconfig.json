@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@repo/shared": ["./packages/shared/src/index.ts"],
+      "@repo/ui": ["./packages/ui/src/index.ts"],
+      "@repo/config": ["./packages/config/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
