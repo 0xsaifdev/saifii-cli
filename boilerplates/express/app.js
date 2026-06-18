@@ -16,7 +16,7 @@ const envMode = process.env.NODE_ENV.trim() || "PRODUCTION";
 const app = express();
 
 app.use(cors(corsOptions));
-app.use(express.json);
+app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
