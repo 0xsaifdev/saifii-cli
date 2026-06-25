@@ -8,11 +8,22 @@
   "bin": {
     "saifii": "index.js"
   },
+  "files": [
+    "index.js",
+    "boilerplates"
+  ],
   "type": "module",
-  "keywords": [],
-  "author": "",
+  "keywords": ["cli", "boilerplate", "scaffold", "generator", "starter"],
+  "author": "Muhammad Saif <muhammadsaifarain786@gmail.com>",
   "license": "ISC",
-  "description": "",
+  "description": "CLI to scaffold projects from prebuilt boilerplates (FastAPI, Laravel, React, Express, Django, Next.js, monorepo, and more).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xsaifdev/saifii-cli.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "chalk": "^5.4.1",
     "commander": "^14.0.0",
