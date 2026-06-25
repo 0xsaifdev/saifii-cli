@@ -6,30 +6,34 @@ A CLI tool to instantly scaffold projects from production-ready boilerplates. St
 
 ## Installation
 
-### 1. Clone the repository
+Install globally via npm:
 
 ```bash
-git clone https://github.com/saifiimuhammad/saifii-cli.git
-cd saifii-cli
+npm install -g saifii-cli
 ```
 
-### 2. Install dependencies
-
-```bash
-npm install
-```
-
-### 3. Install globally on your machine
-
-```bash
-sudo npm install -g .
-```
-
-### 4. Verify installation
+### Verify installation
 
 ```bash
 saifii --version
 ```
+
+That's it — no cloning, no manual linking required.
+
+<details>
+<summary>Installing from source (for contributors)</summary>
+
+```bash
+git clone https://github.com/0xsaifdev/saifii-cli.git
+cd saifii-cli
+npm install
+npm link
+```
+
+`npm link` makes the `saifii` command available globally on your machine, pointing at your local checkout.
+
+</details>
+
 
 ---
 
@@ -75,7 +79,7 @@ saifii list
 | `django` | Django 5 + Django REST Framework + CORS headers | Python |
 | `fastapi` | FastAPI + SQLAlchemy + Pydantic Settings + Alembic | Python |
 | `laravel` | Laravel 11 + MVC structure + SQLite default | PHP |
-| `vanilla` | HTML + CSS + Vanilla JavaScript | JavaScript |
+| `htmlcssjs` | HTML + CSS + Vanilla JavaScript | JavaScript |
 
 ---
 
